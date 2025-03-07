@@ -7,30 +7,24 @@
 #     - `"Отличная работа!"`, если число тест-кейсов больше 10.
 #     - `"Попробуйте улучшить результат."`, если меньше или равно 10.
 
-allTestsPerSevenDays = {}
-
-daysOfWeek = ["Понедельник ", "Вторник ", "Среда ", "Четверг ", "Пятница ", "Суббота ", "Воскресенье "]
-
-for day in daysOfWeek:
+def inputPositiveInteger():
     while True:
-        userInput = input(f"Введите количество тестов в {day}").strip()
+        userInput = input(f"Введите количество тестов ").strip()
         if not userInput:
             print("Вы ввели пустую строку. Повторите ввод.")
             continue
-        tests = int(userInput)
-        if tests >= 0:
-            allTestsPerSevenDays[day] = int(tests)
-            break
-        else:
-            print("Пожалуйста, повторите ввод. Количество кейсов должно быть положительным целым числом")
+        try:
+            tests = int(userInput)
+            if tests >= 0:
+                return tests
+            else:
+                print("Пожалуйста, повторите ввод. Количество кейсов должно быть положительным целым числом")
+        except ValueError:
+            print("Введите целое число")
 
+numberOfTests = inputPositiveInteger()
 
-generalNumberOfTestsPerWeek = sum(allTestsPerSevenDays.values())
-print(f"Вы сделали {generalNumberOfTestsPerWeek} тестов за неделю")
-
-averageNumberOfTestsPerDay = generalNumberOfTestsPerWeek/len(allTestsPerSevenDays)
-
-if averageNumberOfTestsPerDay >= 10:
+if numberOfTests >= 10:
     print("Отличная работа!")
 else:
     print("Попробуйте улучшить результат.")
