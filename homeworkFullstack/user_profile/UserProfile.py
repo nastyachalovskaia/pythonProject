@@ -6,21 +6,23 @@
 2. Позвольте пользователю изменить данные через ввод.
 3. Добавьте проверку: если пользователь не ввел данные, программа выводит сообщение об ошибке.'''
 
+def check_data():
 
-def checkData():
     profile = {}
-    while True:
-        usrName = input("Введите имя: ")
 
-        if usrName.strip():
-            profile["Имя пользователя"] = usrName
-            print(f"Вы ввели: {usrName}")
+    while True:
+
+        usr_name = input("Введите имя: ")
+
+        if usr_name.strip():
+            profile["Имя пользователя"] = usr_name
+            print(f"Вы ввели: {usr_name}")
             break
         else:
             print("Вы ввели пустые данные об имени. Попробуйте еще раз.")
 
     while True:
-        profession = str(input("Введите профессию: "))
+        profession = input("Введите профессию: ")
 
         if profession.strip():
             profile["Профессия"] = profession
@@ -30,23 +32,23 @@ def checkData():
             print("Вы ввели пустые данные о профессии. Попробуйте еще раз.")
 
     while True:
-        favoriteTestTool = str(input("Введите любимый инструмент для тестирования: "))
+        favorite_test_tool = input("Введите любимый инструмент для тестирования: ")
 
-        if favoriteTestTool.strip():
-            profile["Любимый инструмент для тестирования"] = favoriteTestTool
-            print(f"Вы ввели: {favoriteTestTool}")
+        if favorite_test_tool.strip():
+            profile["Любимый инструмент для тестирования"] = favorite_test_tool
+            print(f"Вы ввели: {favorite_test_tool}")
             break
         else:
             print("Вы ввели пустые данные о любимом инструменте для тестирования. Попробуйте еще раз.")
     return profile
 
 
-original_profile = checkData()
+original_profile = check_data()
 
-changeData = input("Хотите изменить данные? Если да, то введите да или ok. Если нет, нажмите Enter: ")
+change_data = input("Хотите изменить данные? Если да, то введите да или ok. Если нет, нажмите Enter: ")
 
-if changeData.strip().lower() == "да" or "ok":
-    new_profile = checkData()
+if change_data.strip().lower() == "да" or "ok":
+    new_profile = check_data()
     original_profile.update(new_profile)
     print("Данные изменены")
 else:

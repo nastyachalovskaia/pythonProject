@@ -7,24 +7,30 @@
 #     - `"Отличная работа!"`, если число тест-кейсов больше 10.
 #     - `"Попробуйте улучшить результат."`, если меньше или равно 10.
 
-def inputPositiveInteger():
+def input_positive_integer():
+
     while True:
-        userInput = input(f"Введите количество тестов ").strip()
-        if not userInput:
+
+        user_input = input("Введите количество тестов ").strip()
+
+        if not user_input:
             print("Вы ввели пустую строку. Повторите ввод.")
             continue
+
         try:
-            tests = int(userInput)
+            tests = int(user_input)
+
             if tests >= 0:
                 return tests
             else:
                 print("Пожалуйста, повторите ввод. Количество кейсов должно быть положительным целым числом")
+
         except ValueError:
             print("Введите целое число")
 
-numberOfTests = inputPositiveInteger()
+number_of_tests = input_positive_integer()
 
-if numberOfTests >= 10:
+if number_of_tests >= 10:
     print("Отличная работа!")
 else:
     print("Попробуйте улучшить результат.")

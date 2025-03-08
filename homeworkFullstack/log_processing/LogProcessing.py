@@ -5,16 +5,17 @@
 
 stroka = "Ошибка: тест не пройден из-за ошибки в модуле auth"
 
-originalString = str(input("Введите строку лога "))
+original_string = str(input("Введите строку лога "))
 
-if "Ошибка" in originalString:
+if "Ошибка" in original_string:
     print("В логе есть инфо об ошибке")
 else:
     print("Попробуйте ещё раз")
 
-changedStringWithNoTrims = originalString.replace('Ошибка', 'Ошибка критическая').strip()
+changed_string_with_no_trims = original_string.strip().replace('Ошибка', 'Ошибка критическая')
 
-print(f"Обработанная строка: {changedStringWithNoTrims}")
+print(f"Обработанная строка: {changed_string_with_no_trims}")
 
-words = changedStringWithNoTrims.split()
+words = changed_string_with_no_trims.split()
+
 print(f"Разбитый текст: {words}")

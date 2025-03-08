@@ -5,12 +5,11 @@
 # 3. Рассчитайте сумму со скидкой и сколько пользователь сэкономит.
 # 4. Округлите сумму к ближайшему целому числу и выведите результат.
 
-totalSum = float(input(f"Введите сумму покупки "))
+total_sum = float(input(f"Введите сумму покупки "))
 discount = int(input(f"Введите процент скидки "))
 
-sumWithDiscount = ((totalSum * discount)/100)
-economy = sumWithDiscount
-result = round(totalSum - sumWithDiscount)
+total_discount = ((total_sum * discount) / 100)
+economy = total_discount
+result = round(total_sum - total_discount)
 
 print(f"Вы экономите {economy} и заплатите {result} ")
-

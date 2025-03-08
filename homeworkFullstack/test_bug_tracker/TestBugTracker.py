@@ -11,9 +11,12 @@ testers_bugs = {
     "Александра": 7,
     "Мария": 2
 }
-userInput = input("Введите имя тестировщика: ")
-if userInput in testers_bugs:
-    testers_bugs[userInput] += 1
+
+user_input = input("Введите имя тестировщика: ")
+
+if user_input in testers_bugs:
+    testers_bugs[user_input] += 1
 else:
-    testers_bugs[userInput] = 1
+    testers_bugs[user_input] = 1
+
 print(testers_bugs)

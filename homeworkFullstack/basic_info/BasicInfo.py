@@ -5,15 +5,19 @@
 3. Проверяет, знает ли пользователь, что такое переменная (вопрос: "Что такое переменная?").
 4. Выводит разные ответы в зависимости от правильности ответа."""
 
-name = str(input("Введите имя: "))
-yourQaExperience = int(input("Введите сколько лет вы работаете в QA: "))
+name = input("Введите имя: ")
+your_qa_experience = int(input("Введите сколько лет вы работаете в QA: "))
+
 print("Что такое переменная?")
-def checkVariableQuestion():
-    correctAnswer = "переменная - это именованная ссылка на объект, который хранится в памяти компьютера"
-    userAnswer = str(input("Введите ответ: "))
-    if "переменная" in userAnswer and ("именованная ссылка" in userAnswer or "в памяти" in userAnswer):
+
+def check_variable_question():
+
+    correct_answer = "переменная - это именованная ссылка на объект, который хранится в памяти компьютера"
+    user_answer = str(input("Введите ответ: "))
+
+    if "переменная" in user_answer and ("именованная ссылка" in user_answer or "в памяти" in user_answer):
         print("Вы правильно ответили на вопрос")
     else:
         print("Попробуйте ещё раз")
 
-checkVariableQuestion()
+check_variable_question()
