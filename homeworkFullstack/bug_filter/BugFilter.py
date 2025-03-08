@@ -15,19 +15,13 @@ bugs = [
     "Ошибка 7 – Low"
 ]
 
-choosePriority = input("Введите приоритет для поиска (High, Medium, Low): ").strip().capitalize()
+choose_priority = input("Введите приоритет для поиска (High, Medium, Low): ").strip().capitalize()
 
-filteredBugs = [bug for bug in bugs if bug.endswith(choosePriority)]
+filtered_bugs = [bug for bug in bugs if bug.endswith(choose_priority)]
 
-#  Функция enumerate() принимает список и возвращает индекс и значение каждого элемента в формате объекта.
-#  Этот объект можно использовать в цикле for для обхода списка.
-indices = [i for i, bug in enumerate(bugs) if bug.endswith(choosePriority)]
-
-if filteredBugs:
+if filtered_bugs:
     print(f"Найденные баги:")
-    for bug in filteredBugs:
+    for bug in filtered_bugs:
         print(f" - {bug}")
 else:
-    print(f"Баг-репортов с приоритетом {choosePriority} нет.")
-
-
+    print(f"Баг-репортов с приоритетом {choose_priority} нет.")

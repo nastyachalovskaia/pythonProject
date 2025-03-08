@@ -8,20 +8,20 @@
     - Если среднее больше 10: `"Отличная работа!"`.
     - Иначе: `"Попробуйте улучшить результат."`.'''
 
-allTestsPerSevenDays = {}
+all_tests_per_seven_days = {}
 
-daysOfWeek = ["Понедельник ", "Вторник ", "Среда ", "Четверг ", "Пятница ", "Суббота ", "Воскресенье "]
+days_of_week = ["Понедельник ", "Вторник ", "Среда ", "Четверг ", "Пятница ", "Суббота ", "Воскресенье "]
 
-for day in daysOfWeek:
+for day in days_of_week:
     tests = input(f"Введите количество тестов в {day}")
-    allTestsPerSevenDays[day] = int(tests)
+    all_tests_per_seven_days[day] = int(tests)
 
-generalNumberOfTestsPerWeek = sum(allTestsPerSevenDays.values())
-print(f"Вы сделали {generalNumberOfTestsPerWeek} тестов за неделю")
+general_number_of_tests_per_week = sum(all_tests_per_seven_days.values())
+print(f"Вы сделали {general_number_of_tests_per_week} тестов за неделю")
 
-averageNumberOfTestsPerDay = generalNumberOfTestsPerWeek/len(allTestsPerSevenDays)
+average_number_of_tests_per_day = general_number_of_tests_per_week / len(all_tests_per_seven_days)
 
-if averageNumberOfTestsPerDay >= 10:
+if average_number_of_tests_per_day >= 10:
     print("Отличная работа!")
 else:
     print("Попробуйте улучшить результат.")

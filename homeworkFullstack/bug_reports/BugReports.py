@@ -16,24 +16,30 @@ bugs = [
     {"name": "Ошибка 5", "priority": "Low"}
 ]
 
+print(bugs)
+
 # Добавление нового бага.
-def addNewBug(bugs, name, priority):
-        newBug = {"name": name, "priority": priority}
-        bugs.append(newBug)
-addNewBug(bugs, "Ошибка 6", "Blocker")
+def add_new_bug(name, priority):
+
+        new_bug = {"name": name, "priority": priority}
+        bugs.append(new_bug)
+
+add_new_bug("Ошибка 6", "Blocker")
+
 print(bugs)
 
 # Сортировка багов по приоритету.
 priority_order = {"Blocker": 0, "Critical": 1, "High": 2, "Low": 3}
 sorted_bugs = sorted(bugs, key=lambda x: priority_order[x["priority"]])
+
 print(sorted_bugs)
 
 # Удаление бага с низким приоритетом.
 filtered_bugs = []
 
 for bug in bugs:
+
     if bug["priority"] != "Low":
         filtered_bugs.append(bug)
+
 print(filtered_bugs)
-
-
